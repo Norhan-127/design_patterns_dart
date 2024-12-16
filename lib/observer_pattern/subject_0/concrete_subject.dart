@@ -13,8 +13,8 @@
 /// subject.registerObserver(observer);
 /// subject.notifyObservers("Hello observers!");
 /// ```
-import 'package:observer_pattern/observer/observer_pattern.dart';
-import 'package:observer_pattern/subject/subject.dart';
+import 'package:observer_pattern/observer_pattern/observer_0/observer_pattern.dart';
+import 'package:observer_pattern/observer_pattern/subject_0/subject.dart';
 
 class ConcreteSubject implements Subject{
   final List<Observer> _observers = [];
