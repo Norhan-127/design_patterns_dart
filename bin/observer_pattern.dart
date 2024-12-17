@@ -1,8 +1,12 @@
 import 'package:observer_pattern/observer_pattern/observer_0/concrete_observer.dart';
 import 'package:observer_pattern/observer_pattern/observer_1/displays.dart';
+import 'package:observer_pattern/observer_pattern/observer_1_v2/current_conditions_display_v2.dart';
+import 'package:observer_pattern/observer_pattern/observer_1_v2/forecast_display_v2.dart';
+import 'package:observer_pattern/observer_pattern/observer_1_v2/statistics_display_v2.dart';
 import 'package:observer_pattern/observer_pattern/subject_0/concrete_subject.dart';
 import 'package:observer_pattern/observer_pattern/subject_0/subject.dart';
 import 'package:observer_pattern/observer_pattern/subject_1/weather_station.dart';
+import 'package:observer_pattern/observer_pattern/subject_1_v2/weather_station_v2.dart';
 
 void main() {
  final Subject subject =ConcreteSubject();
@@ -47,7 +51,24 @@ print("#############day1################");
 
 
   print("#############day2################");
+
+
+
+  WeatherStationV2 weatherStationV2 = WeatherStationV2();
+
+  CurrentConditionsDisplayV2 currentDisplayV2 = CurrentConditionsDisplayV2();
+  ForecastDisplayV2 forecastDisplayV2 = ForecastDisplayV2();
+  StatisticsDisplayV2 statisticsDisplayV2 = StatisticsDisplayV2();
+
+  weatherStationV2.addObserver(currentDisplayV2);
+  weatherStationV2.addObserver(forecastDisplayV2);
+  weatherStationV2.addObserver(statisticsDisplayV2);
+
+  weatherStationV2.setTemperature(25.0);
+  weatherStationV2.setPressure(1012.0);
+  weatherStationV2.setHumidity(85.0);
   
 
+  print("#############day3################");
 
 }

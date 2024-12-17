@@ -13,6 +13,8 @@ class CurrentConditionsDisplay implements ObserverOne {
   }
 
   void display() {
+  print('CurrentConditionsDisplay is Received Change!!!');
+
     print('Current Conditions: $_temperature°C and $_humidity% humidity');
   }
 }
@@ -29,6 +31,8 @@ class StatisticsDisplay implements ObserverOne {
 
   void display() {
     final double avgTemperature = _temperatureHistory.reduce((a, b) => a + b) / _temperatureHistory.length;
+      print('StatisticsDisplay is Received Change!!!');
+
     print('Statistics Display: Average Temperature: ${avgTemperature.toStringAsFixed(2)}°C');
   }
 }
@@ -42,6 +46,8 @@ class ForecastDisplay implements ObserverOne {
   void update(double temperature, double humidity, double pressure) {
     _lastPressure = _currentPressure;
     _currentPressure = pressure;
+      print('ForecastDisplay is Received Change!!!');
+
     display();
   }
 
